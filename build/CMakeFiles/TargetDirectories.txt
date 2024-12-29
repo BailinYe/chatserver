@@ -1,0 +1,7 @@
+/srv/shared_folder/src/ChatServer/build/CMakeFiles/edit_cache.dir
+/srv/shared_folder/src/ChatServer/build/CMakeFiles/rebuild_cache.dir
+/srv/shared_folder/src/ChatServer/build/src/CMakeFiles/edit_cache.dir
+/srv/shared_folder/src/ChatServer/build/src/CMakeFiles/rebuild_cache.dir
+/srv/shared_folder/src/ChatServer/build/src/server/CMakeFiles/ChatServer.dir
+/srv/shared_folder/src/ChatServer/build/src/server/CMakeFiles/edit_cache.dir
+/srv/shared_folder/src/ChatServer/build/src/server/CMakeFiles/rebuild_cache.dir
