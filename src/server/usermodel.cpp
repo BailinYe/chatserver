@@ -70,3 +70,13 @@ bool UserModel::updateState(User user){
     }
     return false;
 }
+
+void UserModel::resetState(){
+    //sql语句
+    char sql[1024] = {"update user set state = 'offline' where state = 'online'"};
+    //MySQL对象
+    MySQL mysql;
+    if(mysql.connect()){
+        mysql.update(sql);
+    }
+}

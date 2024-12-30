@@ -162,3 +162,8 @@ void ChatService::oneChat(const TcpConnectionPtr& conn, json& js, Timestamp time
     // toid不在线 存储离线消息
     _offlineMsgModel.insert(toid, js.dump());    
 }
+
+void ChatService::reset(){
+    //把全部在线用户强制下线
+    _userModel.resetState();
+}
