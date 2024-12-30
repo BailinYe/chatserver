@@ -13,6 +13,12 @@
 },
 {
   "directory": "/srv/shared_folder/src/ChatServer/build/src/server",
+  "command": "/usr/bin/c++  -I/srv/shared_folder/src/ChatServer/include -I/srv/shared_folder/src/ChatServer/include/server -I/srv/shared_folder/src/ChatServer/include/server/db -I/srv/shared_folder/src/ChatServer/thirdparty  -o CMakeFiles/ChatServer.dir/friendModel.cpp.o -c /srv/shared_folder/src/ChatServer/src/server/friendModel.cpp",
+  "file": "/srv/shared_folder/src/ChatServer/src/server/friendModel.cpp",
+  "output": "src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.o"
+},
+{
+  "directory": "/srv/shared_folder/src/ChatServer/build/src/server",
   "command": "/usr/bin/c++  -I/srv/shared_folder/src/ChatServer/include -I/srv/shared_folder/src/ChatServer/include/server -I/srv/shared_folder/src/ChatServer/include/server/db -I/srv/shared_folder/src/ChatServer/thirdparty  -o CMakeFiles/ChatServer.dir/main.cpp.o -c /srv/shared_folder/src/ChatServer/src/server/main.cpp",
   "file": "/srv/shared_folder/src/ChatServer/src/server/main.cpp",
   "output": "src/server/CMakeFiles/ChatServer.dir/main.cpp.o"

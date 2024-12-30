@@ -202,6 +202,30 @@ db/db.cpp.s:
 	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/db/db.cpp.s
 .PHONY : db/db.cpp.s
 
+friendModel.o: friendModel.cpp.o
+.PHONY : friendModel.o
+
+# target to build an object file
+friendModel.cpp.o:
+	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.o
+.PHONY : friendModel.cpp.o
+
+friendModel.i: friendModel.cpp.i
+.PHONY : friendModel.i
+
+# target to preprocess a source file
+friendModel.cpp.i:
+	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.i
+.PHONY : friendModel.cpp.i
+
+friendModel.s: friendModel.cpp.s
+.PHONY : friendModel.s
+
+# target to generate assembly for a file
+friendModel.cpp.s:
+	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.s
+.PHONY : friendModel.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -292,6 +316,9 @@ help:
 	@echo "... db/db.o"
 	@echo "... db/db.i"
 	@echo "... db/db.s"
+	@echo "... friendModel.o"
+	@echo "... friendModel.i"
+	@echo "... friendModel.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

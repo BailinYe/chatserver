@@ -8,6 +8,7 @@
 #include <mutex>
 #include "json.hpp"
 #include "usermodel.hpp"
+#include "friendmodel.hpp"
 #include "offlinemessagemodel.hpp"
 using namespace muduo;
 using namespace muduo::net;
@@ -28,13 +29,17 @@ public:
     void login(const TcpConnectionPtr& conn, json& js, Timestamp time);
     //处理注册业务
     void reg(const TcpConnectionPtr& conn, json& js, Timestamp time); //register是关键字
+    //一对一聊天业务
     void oneChat(const TcpConnectionPtr& conn, json& js, Timestamp time);                                
+    //添加好友业务
+    void addFriend(const TcpConnectionPtr& conn, json& js, Timestamp time);
     //获取消息对应的处理器
     MsgHandler getHandler(int msgid);
     //处理客户端异常退出
     void clientCloseException(const TcpConnectionPtr& conn);
     //服务器异常, 业务重置方法
     void reset();
+
 private:
     ChatService();
 
@@ -50,6 +55,7 @@ private:
     std::unordered_map<int, TcpConnectionPtr> _userConnectionMap;
      //互斥锁对象 保证_userConnectionMap insert delete 操作的线程安全
     std::mutex _connMutex;
+    FriendModel _friendModel;
                           
 };
 

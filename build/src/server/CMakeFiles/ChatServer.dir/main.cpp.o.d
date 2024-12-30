@@ -325,6 +325,7 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /srv/shared_folder/src/ChatServer/include/server/usermodel.hpp \
  /srv/shared_folder/src/ChatServer/include/server/user.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/friendmodel.hpp \
  /srv/shared_folder/src/ChatServer/include/server/offlinemessagemodel.hpp \
  /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
