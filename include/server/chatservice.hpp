@@ -8,7 +8,7 @@
 #include <mutex>
 #include "json.hpp"
 #include "usermodel.hpp"
-
+#include "offlinemessagemodel.hpp"
 using namespace muduo;
 using namespace muduo::net;
 using namespace std::placeholders;
@@ -23,10 +23,12 @@ class ChatService{
 public:
     //线程安全的懒汉式模式获取单例接口函数
     static ChatService* getChatService();
+    //由网络层派发的处理器回调
     //处理登录业务
     void login(const TcpConnectionPtr& conn, json& js, Timestamp time);
     //处理注册业务
     void reg(const TcpConnectionPtr& conn, json& js, Timestamp time); //register是关键字
+    void oneChat(const TcpConnectionPtr& conn, json& js, Timestamp time);                                
     //获取消息对应的处理器
     MsgHandler getHandler(int msgid);
     //处理客户端异常退出
@@ -40,6 +42,8 @@ private:
     //数据操作类对象
     //model 给业务层提供的都是对象
     UserModel _userModel; //服务只依赖model类 并不直接涉及数据库相关的操作 数据库相关的操作封装在了model里
+    offlineMsgModel _offlineMsgModel;
+
     //存储在线用户的连接 //会随着用户的上线和下线不断改变 需要保证线程安全
     std::unordered_map<int, TcpConnectionPtr> _userConnectionMap;
      //互斥锁对象 保证_userConnectionMap insert delete 操作的线程安全

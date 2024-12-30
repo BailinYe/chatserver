@@ -4,7 +4,7 @@
 #include <muduo/net/Callbacks.h>
 #include <mutex>
 #include <string>
-#include <exception>
+#include <vector>
 #include <muduo/base/Logging.h>
 
 using namespace std::placeholders;
@@ -19,6 +19,7 @@ ChatService* ChatService::getChatService(){
 ChatService::ChatService(){
     _msgHandlerMap.insert({LOGIN_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});     
     _msgHandlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});     
+    _msgHandlerMap.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
 }
 
 //业务代码应该只处理对象
@@ -57,6 +58,17 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
             response["errno"] = 0;
             response["id"] = user.getId();
             response["name"] = user.getName();
+            //查询该用户是否有离线消息
+            std::vector<std::string> rows = _offlineMsgModel.query(user.getId());
+            if(!rows.empty()){
+                //用户有离线消息
+                //将容器赋给json对象
+                response["offlinemsg"] = rows;
+                //读取该用户的离线消息后 把该用户的所有离线消息删除掉
+                _offlineMsgModel.remove(user.getId());
+
+            }
+            
             conn->send(response.dump());
         }
     }else{
@@ -132,4 +144,21 @@ void ChatService::clientCloseException(const TcpConnectionPtr& conn){
         user.setState("offline");
         _userModel.updateState(user); // 根据user对象的状态信息更新表
     }
+}
+
+//一对一聊天业务
+void ChatService::oneChat(const TcpConnectionPtr& conn, json& js, Timestamp time){
+    int toid = js["to"].get<int>();    
+    {
+        //线程安全 因为可能有其它线程在修改_userConnectionMap这个变量
+        std::lock_guard<std::mutex> lock(_connMutex);
+        auto it = _userConnectionMap.find(toid);
+        if(it != _userConnectionMap.end()){
+          // toid在线 转发消息 服务器主动推送消息给id为toid的用户
+          it->second->send(js.dump());
+          return;
+        }
+    }
+    // toid不在线 存储离线消息
+    _offlineMsgModel.insert(toid, js.dump());    
 }

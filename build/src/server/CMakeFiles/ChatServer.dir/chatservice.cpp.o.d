@@ -318,5 +318,6 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /srv/shared_folder/src/ChatServer/include/server/usermodel.hpp \
  /srv/shared_folder/src/ChatServer/include/server/user.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/offlinemessagemodel.hpp \
  /srv/shared_folder/src/ChatServer/include/public.hpp \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h

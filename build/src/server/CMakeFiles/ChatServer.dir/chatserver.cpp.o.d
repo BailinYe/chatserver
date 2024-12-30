@@ -324,4 +324,5 @@ src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/13/bits/ostream.tcc \
  /usr/include/c++/13/bits/istream.tcc \
  /srv/shared_folder/src/ChatServer/include/server/usermodel.hpp \
- /srv/shared_folder/src/ChatServer/include/server/user.hpp
+ /srv/shared_folder/src/ChatServer/include/server/user.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/offlinemessagemodel.hpp
