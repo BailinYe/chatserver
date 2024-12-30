@@ -226,6 +226,30 @@ friendModel.cpp.s:
 	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.s
 .PHONY : friendModel.cpp.s
 
+groupmodel.o: groupmodel.cpp.o
+.PHONY : groupmodel.o
+
+# target to build an object file
+groupmodel.cpp.o:
+	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.o
+.PHONY : groupmodel.cpp.o
+
+groupmodel.i: groupmodel.cpp.i
+.PHONY : groupmodel.i
+
+# target to preprocess a source file
+groupmodel.cpp.i:
+	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.i
+.PHONY : groupmodel.cpp.i
+
+groupmodel.s: groupmodel.cpp.s
+.PHONY : groupmodel.s
+
+# target to generate assembly for a file
+groupmodel.cpp.s:
+	cd /srv/shared_folder/src/ChatServer/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.s
+.PHONY : groupmodel.cpp.s
+
 main.o: main.cpp.o
 .PHONY : main.o
 
@@ -319,6 +343,9 @@ help:
 	@echo "... friendModel.o"
 	@echo "... friendModel.i"
 	@echo "... friendModel.s"
+	@echo "... groupmodel.o"
+	@echo "... groupmodel.i"
+	@echo "... groupmodel.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
