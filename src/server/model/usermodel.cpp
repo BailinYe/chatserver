@@ -23,10 +23,8 @@ bool UserModel::insert(User& user){
             
             return true; 
         }
-        std::cout << "didn't update";
     }
     
-    std::cout << "didn't connect";
     return false;
 }
 

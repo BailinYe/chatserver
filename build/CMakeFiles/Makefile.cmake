@@ -12,6 +12,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeSystem.cmake"
   "/srv/shared_folder/src/ChatServer/src/CMakeLists.txt"
+  "/srv/shared_folder/src/ChatServer/src/client/CMakeLists.txt"
   "/srv/shared_folder/src/ChatServer/src/server/CMakeLists.txt"
   "/usr/share/cmake-3.28/Modules/CMakeCCompiler.cmake.in"
   "/usr/share/cmake-3.28/Modules/CMakeCCompilerABI.c"
@@ -49,8 +50,12 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/Borland-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/Bruce-C-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/usr/share/cmake-3.28/Modules/Compiler/Clang-C.cmake"
+  "/usr/share/cmake-3.28/Modules/Compiler/Clang-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/Clang-DetermineCompilerInternal.cmake"
+  "/usr/share/cmake-3.28/Modules/Compiler/Clang-FindBinUtils.cmake"
+  "/usr/share/cmake-3.28/Modules/Compiler/Clang.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/Comeau-CXX-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/Compaq-C-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake"
@@ -61,10 +66,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GHS-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-C-DetermineCompiler.cmake"
-  "/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake"
-  "/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake"
-  "/usr/share/cmake-3.28/Modules/Compiler/GNU-FindBinUtils.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/HP-C-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/HP-CXX-DetermineCompiler.cmake"
@@ -101,6 +103,8 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/zOS-C-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
   "/usr/share/cmake-3.28/Modules/Internal/FeatureTesting.cmake"
+  "/usr/share/cmake-3.28/Modules/Platform/Linux-Clang-C.cmake"
+  "/usr/share/cmake-3.28/Modules/Platform/Linux-Clang-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-Determine-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake"
@@ -126,9 +130,11 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/server/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "src/client/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "src/server/CMakeFiles/ChatServer.dir/DependInfo.cmake"
+  "src/client/CMakeFiles/ChatClient.dir/DependInfo.cmake"
   )

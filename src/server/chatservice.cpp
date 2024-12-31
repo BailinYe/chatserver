@@ -6,7 +6,6 @@
 #include <mutex>
 #include <string>
 #include <vector>
-#include <map>
 #include <muduo/base/Logging.h>
 
 using namespace std::placeholders;
@@ -42,7 +41,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
             // 序列化响应消息
             response["msgid"] = LOGIN_MSG_ACK;
             response["errno"] = 2;
-            response["errmsg"] = "该账号已经登陆, 请勿重复登录";
+            response["errmsg"] = "this account is online, do not login again";
             conn->send(response.dump());
         } else {
             // 登录成功
@@ -93,7 +92,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
         //序列化响应消息
         response["msgid"] = LOGIN_MSG_ACK;
         response["errno"] = 1;
-        response["errmsg"] = "用户名或者密码错误";
+        response["errmsg"] = "id or password is wrong";
         conn->send(response.dump());
     }
 }
@@ -111,7 +110,7 @@ void ChatService::reg(const TcpConnectionPtr &conn, json &js, Timestamp time){
         json response;
         //序列化响应消息
         response["msgid"] = REG_MSG_ACK;
-        response["error"] = 0;
+        response["errno"] = 0;
         response["id"] = user.getId();
         conn->send(response.dump());
 
@@ -120,7 +119,7 @@ void ChatService::reg(const TcpConnectionPtr &conn, json &js, Timestamp time){
         json response;
         //序列化响应消息
         response["msgid"] = REG_MSG_ACK;
-        response["error"] = 1;
+        response["errno"] = 1;
         conn->send(response.dump());
     }
 
