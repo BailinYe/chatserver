@@ -1,10 +1,8 @@
-src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.o: \
- /srv/shared_folder/src/ChatServer/src/server/groupmodel.cpp \
+src/server/CMakeFiles/ChatServer.dir/model/friendModel.cpp.o: \
+ /srv/shared_folder/src/ChatServer/src/server/model/friendModel.cpp \
  /usr/include/stdc-predef.h \
- /srv/shared_folder/src/ChatServer/include/server/groupmodel.hpp \
- /srv/shared_folder/src/ChatServer/include/server/group.hpp \
- /srv/shared_folder/src/ChatServer/include/server/groupuser.hpp \
- /srv/shared_folder/src/ChatServer/include/server/user.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/friendmodel.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/user.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -123,7 +121,6 @@ src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /srv/shared_folder/src/ChatServer/include/server/groupuser.hpp \
  /srv/shared_folder/src/ChatServer/include/server/db/db.h \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h \
  /usr/include/muduo/base/noncopyable.h \

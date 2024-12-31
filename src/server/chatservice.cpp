@@ -189,6 +189,49 @@ void ChatService::addFriend(const TcpConnectionPtr& conn, json& js, Timestamp ti
 
 }
 
+
+
+//创建群组业务
+void ChatService::createGroup(const TcpConnectionPtr& conn, json& js, Timestamp time){
+    int userid = js["id"].get<int>();
+    std::string name = js["groupname"];
+    std::string desc = js["groupdesc"];
+
+    //存储新创建的群组信息
+    Group group(-1, name, desc);
+    if(_groupModel.createGroup(group)){
+        //存储群组创建人信息
+        _groupModel.addGroup(userid, group.getId(), "creator");
+    }
+}
+
+//加入群组业务
+void ChatService::addGroup(const TcpConnectionPtr& conn, json& js, Timestamp time){
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+    _groupModel.addGroup(userid, groupid, "normal");
+}
+
+//群组聊天业务
+void ChatService::groupChat(const TcpConnectionPtr& conn, json& js, Timestamp time){
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+    std::vector<int> userids = _groupModel.queryGroupUsers(userid, groupid);
+
+    std::lock_guard<std::mutex> lock(_connMutex);
+    for(int id : userids){
+        auto it = _userConnectionMap.find(id);
+        if(it != _userConnectionMap.end()){
+            //转发群消息
+            it->second->send(js.dump());
+        }
+        else{
+            //存储离线消息
+            _offlineMsgModel.insert(id, js.dump());
+        }
+    }
+}
+
 void ChatService::reset(){
     //把全部在线用户强制下线
     _userModel.resetState();

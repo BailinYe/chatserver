@@ -1,8 +1,8 @@
-src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.o: \
- /srv/shared_folder/src/ChatServer/src/server/friendModel.cpp \
+src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o: \
+ /srv/shared_folder/src/ChatServer/src/server/model/usermodel.cpp \
  /usr/include/stdc-predef.h \
- /srv/shared_folder/src/ChatServer/include/server/friendmodel.hpp \
- /srv/shared_folder/src/ChatServer/include/server/user.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/usermodel.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/user.hpp \
  /usr/include/c++/13/string /usr/include/c++/13/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
@@ -117,21 +117,28 @@ src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.o: \
  /usr/include/c++/13/bits/memory_resource.h /usr/include/c++/13/cstddef \
  /usr/include/c++/13/bits/uses_allocator.h \
  /usr/include/c++/13/bits/uses_allocator_args.h /usr/include/c++/13/tuple \
- /usr/include/c++/13/vector /usr/include/c++/13/bits/stl_uninitialized.h \
- /usr/include/c++/13/bits/stl_vector.h \
- /usr/include/c++/13/bits/stl_bvector.h \
- /usr/include/c++/13/bits/vector.tcc \
+ /srv/shared_folder/src/ChatServer/include/server/model/user.hpp \
+ /usr/include/mysql/mysql.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
+ /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-least.h \
+ /usr/include/mysql/field_types.h /usr/include/mysql/my_list.h \
+ /usr/include/mysql/mysql_com.h /usr/include/mysql/my_command.h \
+ /usr/include/mysql/my_compress.h \
+ /usr/include/mysql/udf_registration_types.h \
+ /usr/include/mysql/client_plugin.h /usr/include/c++/13/stdlib.h \
+ /usr/include/mysql/plugin_auth_common.h \
+ /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
+ /usr/include/mysql/errmsg.h \
  /srv/shared_folder/src/ChatServer/include/server/db/db.h \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h \
  /usr/include/muduo/base/noncopyable.h \
  /usr/include/muduo/base/StringPiece.h /usr/include/string.h \
  /usr/include/strings.h /usr/include/muduo/base/Types.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h /usr/include/stdint.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /usr/include/x86_64-linux-gnu/bits/stdint-least.h /usr/include/assert.h \
- /usr/include/muduo/base/Timestamp.h /usr/include/muduo/base/copyable.h \
- /usr/include/boost/operators.hpp /usr/include/c++/13/iterator \
- /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/include/assert.h /usr/include/muduo/base/Timestamp.h \
+ /usr/include/muduo/base/copyable.h /usr/include/boost/operators.hpp \
+ /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
  /usr/include/c++/13/bits/streambuf_iterator.h \
  /usr/include/c++/13/streambuf /usr/include/c++/13/bits/ios_base.h \
  /usr/include/c++/13/ext/atomicity.h \
@@ -180,13 +187,14 @@ src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.o: \
  /usr/include/boost/config/detail/cxx_composite.hpp \
  /usr/include/boost/detail/workaround.hpp \
  /usr/include/boost/config/workaround.hpp \
- /usr/include/boost/core/addressof.hpp /usr/include/mysql/mysql.h \
- /usr/lib/gcc/x86_64-linux-gnu/13/include/stdbool.h \
- /usr/include/mysql/field_types.h /usr/include/mysql/my_list.h \
- /usr/include/mysql/mysql_com.h /usr/include/mysql/my_command.h \
- /usr/include/mysql/my_compress.h \
- /usr/include/mysql/udf_registration_types.h \
- /usr/include/mysql/client_plugin.h /usr/include/c++/13/stdlib.h \
- /usr/include/mysql/plugin_auth_common.h \
- /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
- /usr/include/mysql/errmsg.h
+ /usr/include/boost/core/addressof.hpp /usr/include/c++/13/iostream \
+ /usr/include/c++/13/ostream /usr/include/c++/13/ios \
+ /usr/include/c++/13/bits/basic_ios.h \
+ /usr/include/c++/13/bits/locale_facets.h /usr/include/c++/13/cwctype \
+ /usr/include/wctype.h /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+ /usr/include/c++/13/bits/locale_facets.tcc \
+ /usr/include/c++/13/bits/basic_ios.tcc \
+ /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
+ /usr/include/c++/13/bits/istream.tcc

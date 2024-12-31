@@ -11,11 +11,11 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/srv/shared_folder/src/ChatServer/src/server/chatserver.cpp" "src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o.d"
   "/srv/shared_folder/src/ChatServer/src/server/chatservice.cpp" "src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o.d"
   "/srv/shared_folder/src/ChatServer/src/server/db/db.cpp" "src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/db/db.cpp.o.d"
-  "/srv/shared_folder/src/ChatServer/src/server/friendModel.cpp" "src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/friendModel.cpp.o.d"
-  "/srv/shared_folder/src/ChatServer/src/server/groupmodel.cpp" "src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/groupmodel.cpp.o.d"
   "/srv/shared_folder/src/ChatServer/src/server/main.cpp" "src/server/CMakeFiles/ChatServer.dir/main.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/main.cpp.o.d"
-  "/srv/shared_folder/src/ChatServer/src/server/offlinemessagemodel.cpp" "src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/offlinemessagemodel.cpp.o.d"
-  "/srv/shared_folder/src/ChatServer/src/server/usermodel.cpp" "src/server/CMakeFiles/ChatServer.dir/usermodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/usermodel.cpp.o.d"
+  "/srv/shared_folder/src/ChatServer/src/server/model/friendModel.cpp" "src/server/CMakeFiles/ChatServer.dir/model/friendModel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/model/friendModel.cpp.o.d"
+  "/srv/shared_folder/src/ChatServer/src/server/model/groupmodel.cpp" "src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/model/groupmodel.cpp.o.d"
+  "/srv/shared_folder/src/ChatServer/src/server/model/offlinemessagemodel.cpp" "src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/model/offlinemessagemodel.cpp.o.d"
+  "/srv/shared_folder/src/ChatServer/src/server/model/usermodel.cpp" "src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o" "gcc" "src/server/CMakeFiles/ChatServer.dir/model/usermodel.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

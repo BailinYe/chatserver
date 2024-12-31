@@ -316,10 +316,12 @@ src/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc /usr/include/c++/13/ostream \
  /usr/include/c++/13/bits/ostream.tcc \
  /usr/include/c++/13/bits/istream.tcc \
- /srv/shared_folder/src/ChatServer/include/server/usermodel.hpp \
- /srv/shared_folder/src/ChatServer/include/server/user.hpp \
- /srv/shared_folder/src/ChatServer/include/server/friendmodel.hpp \
- /srv/shared_folder/src/ChatServer/include/server/offlinemessagemodel.hpp \
- /srv/shared_folder/src/ChatServer/include/server/friendmodel.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/usermodel.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/user.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/groupmodel.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/group.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/groupuser.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/friendmodel.hpp \
+ /srv/shared_folder/src/ChatServer/include/server/model/offlinemessagemodel.hpp \
  /srv/shared_folder/src/ChatServer/include/public.hpp \
  /usr/include/muduo/base/Logging.h /usr/include/muduo/base/LogStream.h
