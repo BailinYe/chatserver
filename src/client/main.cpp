@@ -165,11 +165,18 @@ int main(int argc, char** argv){
                             //显示当前用户的离线消息 个人聊天信息或者群组消息
                             if(responsejs.contains("offlinemsg")){
                                 std::vector<std::string> msgs = responsejs["offlinemsg"];
-                                for(std::string& msg : msgs){
+                                for(std::string& msg : msgs){ //从离线消息中判断是个人离线消息还是群组离线消息
                                     json js = json::parse(msg);
-                                    //time + [id] + name + " said: " + xxx
-                                    std::cout << js["time"].get<std::string>() << " [" << js["id"] << "] " << js["name"] 
-                                              << " said: " << js["msg"].get<std::string>() << std::endl;
+                                    int msgtype = js["msgid"].get<int>();
+                                    std::cout << "type: " << msgtype;
+                                    if(msgtype == ONE_CHAT_MSG){
+                                        std::cout << "personal message: " << js["time"].get<std::string>() << " [" << js["id"] << "] " << js["name"].get<std::string>() << " said: " 
+                                                  << js["msg"].get<std::string>() << std::endl;
+                                    }
+                                    else if(msgtype == GROUP_CHAT_MSG){
+                                        std::cout << "group [id:" << js["groupid"] << "]" << "message: " << js["time"].get<std::string>() << " [" << js["id"] << "] " << js["name"].get<std::string>() << " said: " 
+                                                  << js["msg"].get<std::string>() << std::endl;
+                                    }
                                 }
                             }
 
@@ -236,7 +243,7 @@ int main(int argc, char** argv){
 }
 
 //接收线程
-void readTaskHandler(int clientfd){
+void readTaskHandler(int clientfd){ //不存在竞态条件
     for(;;){
         char buffer[1024] = {0};
         int len = recv(clientfd, buffer, 1024,0 );
@@ -246,8 +253,14 @@ void readTaskHandler(int clientfd){
         }
         //通过ChatServer接收其他用户发送的消息 反序列化得到js对象
         json js = json::parse(buffer);
-        if(ONE_CHAT_MSG == js["msgid"].get<int>()){
-            std::cout << js["time"].get<std::string>() << " [" << js["id"] << "] " << js["name"].get<std::string>() << " said: " 
+        int msgtype = js["msgid"].get<int>();
+        if(msgtype == ONE_CHAT_MSG){
+            std::cout << "personal message: " << js["time"].get<std::string>() << " [" << js["id"] << "] " << js["name"].get<std::string>() << " said: " 
+                      << js["msg"].get<std::string>() << std::endl;
+            continue;
+        }
+        if(msgtype == GROUP_CHAT_MSG){
+            std::cout << "group [id:" << js["groupid"] << "]" << "message: " << js["time"].get<std::string>() << " [" << js["id"] << "] " << js["name"].get<std::string>() << " said: " 
                       << js["msg"].get<std::string>() << std::endl;
             continue;
         }
@@ -390,15 +403,66 @@ void chat(int clientfd, std::string msg){
 }
 
 //"creategroup" command handler
-void creategroup(int, std::string){
+void creategroup(int clientfd, std::string commandArgs){
+    int idx = commandArgs.find(":");
+    if(idx == -1){
+        std::cerr << "creategroup command invalid" << std::endl;
+        return;
+    } 
+    
+    std::string groupname = commandArgs.substr(0, idx);
+    std::string groupdesc = commandArgs.substr(idx+1, commandArgs.size()-idx);
+    std::cout << groupname << groupdesc;
+    json js;
+    js["msgid"] = CREATE_GROUP_MSG;
+    js["id"] = g_currentUser.getId();
+    js["groupname"] = groupname;
+    js["groupdesc"] = groupdesc;
 
+    std::string buffer = js.dump();
+    int len = send(clientfd, buffer.c_str(), strlen(buffer.c_str()) + 1, 0);
+    if(len == -1){
+        std::cerr << "send creategroup msg error" << buffer << std::endl;
+    }
 }
 //"addgroup" command handler
-void addgroup(int, std::string){
+void addgroup(int clientfd, std::string commandArgs){
+    int groupid = atoi(commandArgs.c_str());
+    json js;
+    js["msgid"] = ADD_GROUP_MSG;
+    js["id"] = g_currentUser.getId();
+    js["groupid"] = groupid;
+    std::string buffer = js.dump();
 
+    int len = send(clientfd, buffer.c_str(), strlen(buffer.c_str())+1, 0);
+    if(len == -1){
+        std::cerr << "send addgorup msg error -> " << buffer << std::endl;
+    }
 }
 //"groupchat" command handler
-void groupchat(int, std::string){
+void groupchat(int clientfd, std::string commandArgs){
+    int idx = commandArgs.find(":"); 
+    if(idx == -1){
+        std::cerr << "chat command invalid" << std::endl;
+        return;
+    }
+
+    int groupid = std::stoi(commandArgs.substr(0, idx));
+    std::string message = commandArgs.substr(idx+1, commandArgs.size()-idx);
+    
+    json js;
+    js["msgid"] = GROUP_CHAT_MSG;
+    js["id"] = g_currentUser.getId();
+    js["name"] = g_currentUser.getName();
+    js["groupid"] = groupid;
+    js["msg"] = message;
+    js["time"] = getCurrentTime();
+    std::string buffer = js.dump();
+
+    int len = send(clientfd, buffer.c_str(), strlen(buffer.c_str()) + 1, 0);
+    if(len == -1){
+        std::cerr << "send groupchat msg error" << buffer << std::endl;
+    }
 
 }
 //"logout" command handler

@@ -7,15 +7,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
   /srv/shared_folder/src/ChatServer/include/server/model/groupuser.hpp \
   /srv/shared_folder/src/ChatServer/include/server/model/user.hpp \
   /srv/shared_folder/src/ChatServer/thirdparty/json.hpp \
-  /usr/include/alloca.h \
-  /usr/include/arpa/inet.h \
-  /usr/include/asm-generic/bitsperlong.h \
-  /usr/include/asm-generic/errno-base.h \
-  /usr/include/asm-generic/errno.h \
-  /usr/include/asm-generic/posix_types.h \
-  /usr/include/asm-generic/socket.h \
-  /usr/include/asm-generic/sockios.h \
-  /usr/include/assert.h \
   /usr/include/c++/13/algorithm \
   /usr/include/c++/13/array \
   /usr/include/c++/13/backward/auto_ptr.h \
@@ -193,6 +184,26 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
   /usr/include/c++/13/utility \
   /usr/include/c++/13/valarray \
   /usr/include/c++/13/vector \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
+  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
+  /usr/include/alloca.h \
+  /usr/include/arpa/inet.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/asm-generic/errno-base.h \
+  /usr/include/asm-generic/errno.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/asm-generic/sockios.h \
+  /usr/include/assert.h \
   /usr/include/ctype.h \
   /usr/include/endian.h \
   /usr/include/errno.h \
@@ -305,17 +316,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h \
   /usr/include/x86_64-linux-gnu/bits/wordsize.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h \
-  /usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
   /usr/include/x86_64-linux-gnu/gnu/stubs.h \
   /usr/include/x86_64-linux-gnu/sys/cdefs.h \
@@ -323,12 +323,37 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
   /usr/include/x86_64-linux-gnu/sys/single_threaded.h \
   /usr/include/x86_64-linux-gnu/sys/socket.h \
   /usr/include/x86_64-linux-gnu/sys/types.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h \
-  /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
+  /usr/lib/llvm-18/lib/clang/18/include/__stdarg___gnuc_va_list.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_max_align_t.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_null.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_nullptr_t.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_offsetof.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_ptrdiff_t.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_size_t.h \
+  /usr/lib/llvm-18/lib/clang/18/include/__stddef_wchar_t.h \
+  /usr/lib/llvm-18/lib/clang/18/include/sanitizer/tsan_interface.h \
+  /usr/lib/llvm-18/lib/clang/18/include/stdarg.h \
+  /usr/lib/llvm-18/lib/clang/18/include/stddef.h \
+  /usr/lib/llvm-18/lib/clang/18/include/stdint.h
 
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h:
+/usr/lib/llvm-18/lib/clang/18/include/stdarg.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/sanitizer/tsan_interface.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stddef_wchar_t.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stddef_ptrdiff_t.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stddef_offsetof.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stddef_nullptr_t.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stddef_null.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stddef_max_align_t.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stdarg___gnuc_va_list.h:
 
 /usr/include/x86_64-linux-gnu/sys/types.h:
 
@@ -337,24 +362,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
-
-/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
 /usr/include/x86_64-linux-gnu/bits/wctype-wchar.h:
 
@@ -408,13 +415,33 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
 
-/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
-
-/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
-
 /usr/include/x86_64-linux-gnu/bits/stdint-least.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+/usr/include/x86_64-linux-gnu/bits/time.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/sched.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/include/c++/13/ctime:
+
+/usr/include/c++/13/cstdlib:
+
+/usr/include/c++/13/cstdint:
+
+/usr/include/c++/13/cmath:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/error_constants.h:
 
 /usr/include/c++/13/clocale:
 
@@ -424,15 +451,15 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/cctype:
 
-/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
 /usr/include/c++/13/ext/atomicity.h:
 
 /usr/include/c++/13/tr1/gamma.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/asm-generic/bitsperlong.h:
 
 /usr/include/c++/13/bits/vector.tcc:
 
@@ -446,9 +473,11 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/bits/uses_allocator_args.h:
 
+/usr/include/c++/13/bits/atomic_base.h:
+
 /usr/include/arpa/inet.h:
 
-/usr/include/c++/13/bits/atomic_base.h:
+/usr/include/c++/13/cstring:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
@@ -474,6 +503,10 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
+/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
+
+/usr/include/c++/13/bits/stl_relops.h:
+
 /usr/include/c++/13/bits/stl_numeric.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sched_param.h:
@@ -483,6 +516,8 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 /usr/include/c++/13/bits/functexcept.h:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
+
+/usr/include/c++/13/bits/stl_construct.h:
 
 /usr/include/c++/13/bits/stl_bvector.h:
 
@@ -500,10 +535,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/bits/postypes.h:
 
-/usr/include/c++/13/cstdint:
-
-/usr/include/c++/13/cstdlib:
-
 /usr/include/c++/13/bits/this_thread_sleep.h:
 
 /usr/include/c++/13/bits/shared_ptr.h:
@@ -518,6 +549,14 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/bits/gslice.h:
 
+/usr/include/c++/13/compare:
+
+/usr/include/c++/13/system_error:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++locale.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/os_defines.h:
+
 /usr/include/c++/13/bits/slice_array.h:
 
 /usr/include/c++/13/bits/stl_iterator_base_types.h:
@@ -528,19 +567,27 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/bits/ostream.tcc:
 
+/usr/include/c++/13/ostream:
+
+/usr/include/c++/13/tr1/riemann_zeta.tcc:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
 /usr/include/c++/13/bits/move.h:
 
 /usr/include/asm-generic/sockios.h:
 
-/usr/include/c++/13/bits/memoryfwd.h:
+/usr/include/c++/13/bits/streambuf.tcc:
 
-/usr/include/c++/13/bits/shared_ptr_atomic.h:
+/usr/include/c++/13/bits/specfun.h:
 
-/usr/include/c++/13/bits/erase_if.h:
+/usr/include/c++/13/ciso646:
 
-/usr/include/c++/13/bits/basic_ios.tcc:
+/usr/include/c++/13/bits/basic_string.h:
 
-/usr/include/linux/stddef.h:
+/srv/shared_folder/src/ChatServer/include/server/model/user.hpp:
+
+/usr/include/c++/13/tr1/poly_laguerre.tcc:
 
 /usr/include/c++/13/bits/valarray_array.h:
 
@@ -552,7 +599,17 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/bits/parse_numbers.h:
 
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/c++/13/bits/utility.h:
+
+/srv/shared_folder/src/ChatServer/thirdparty/json.hpp:
+
 /usr/include/c++/13/bits/locale_facets.h:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+/usr/include/c++/13/bits/concept_check.h:
 
 /usr/include/x86_64-linux-gnu/bits/long-double.h:
 
@@ -560,47 +617,35 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
-/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
-
-/usr/include/c++/13/bits/node_handle.h:
-
-/usr/include/c++/13/forward_list:
-
-/usr/include/c++/13/bits/predefined_ops.h:
-
-/usr/include/c++/13/pstl/execution_defs.h:
-
-/srv/shared_folder/src/ChatServer/src/client/main.cpp:
-
-/usr/include/c++/13/iosfwd:
-
-/usr/include/wchar.h:
-
-/usr/include/c++/13/bits/shared_ptr_base.h:
-
-/usr/include/c++/13/backward/binders.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
-
-/usr/include/c++/13/bits/charconv.h:
-
-/usr/include/c++/13/cstdio:
+/usr/include/c++/13/bits/basic_string.tcc:
 
 /usr/include/c++/13/bits/allocated_ptr.h:
 
 /usr/include/c++/13/bit:
 
-/usr/include/c++/13/bits/basic_string.tcc:
+/usr/include/c++/13/bits/predefined_ops.h:
 
-/usr/include/c++/13/bits/enable_special_members.h:
+/usr/include/c++/13/iosfwd:
 
 /usr/include/c++/13/bits/stream_iterator.h:
+
+/usr/include/c++/13/bits/enable_special_members.h:
 
 /usr/include/c++/13/bits/stl_raw_storage_iter.h:
 
 /usr/include/x86_64-linux-gnu/bits/mathcalls-helper-functions.h:
 
 /usr/include/c++/13/algorithm:
+
+/usr/include/c++/13/backward/binders.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/stdint.h:
+
+/usr/include/c++/13/cstdio:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/c++/13/bits/charconv.h:
 
 /usr/include/c++/13/bits/functional_hash.h:
 
@@ -609,110 +654,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 /usr/include/c++/13/bits/indirect_array.h:
 
 /usr/include/errno.h:
-
-/usr/include/c++/13/bits/stl_construct.h:
-
-/usr/include/asm-generic/posix_types.h:
-
-/usr/include/c++/13/tr1/special_function_util.h:
-
-/usr/include/stdc-predef.h:
-
-/srv/shared_folder/src/ChatServer/include/server/model/group.hpp:
-
-/usr/include/asm-generic/socket.h:
-
-/usr/include/alloca.h:
-
-/srv/shared_folder/src/ChatServer/include/server/model/user.hpp:
-
-/usr/include/c++/13/ciso646:
-
-/usr/include/c++/13/bits/basic_string.h:
-
-/usr/include/c++/13/tr1/poly_laguerre.tcc:
-
-/usr/include/c++/13/bits/alloc_traits.h:
-
-/usr/include/c++/13/bits/concept_check.h:
-
-/usr/include/x86_64-linux-gnu/bits/endianness.h:
-
-/usr/include/c++/13/bits/chrono.h:
-
-/usr/include/assert.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
-
-/usr/include/x86_64-linux-gnu/bits/in.h:
-
-/usr/include/c++/13/backward/auto_ptr.h:
-
-/usr/include/c++/13/array:
-
-/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
-
-/usr/include/c++/13/bits/hash_bytes.h:
-
-/usr/include/x86_64-linux-gnu/bits/math-vector.h:
-
-/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
-
-/usr/include/asm-generic/errno-base.h:
-
-/usr/include/c++/13/bits/streambuf.tcc:
-
-/usr/include/c++/13/bits/specfun.h:
-
-/usr/include/c++/13/bits/invoke.h:
-
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h:
-
-/usr/include/x86_64-linux-gnu/bits/environments.h:
-
-/usr/include/c++/13/bits/istream.tcc:
-
-/usr/include/c++/13/bits/exception_ptr.h:
-
-/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
-
-/usr/include/c++/13/bits/stl_multimap.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
-
-/usr/include/c++/13/bits/std_function.h:
-
-/usr/include/c++/13/bits/char_traits.h:
-
-/usr/include/c++/13/bits/hashtable_policy.h:
-
-/usr/include/netinet/in.h:
-
-/usr/include/c++/13/ostream:
-
-/usr/include/c++/13/tr1/riemann_zeta.tcc:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/include/c++/13/bits/cxxabi_forced.h:
-
-/usr/include/c++/13/bits/exception.h:
-
-/usr/include/c++/13/bits/memory_resource.h:
-
-/usr/include/c++/13/bits/valarray_after.h:
-
-/usr/include/c++/13/streambuf:
-
-/usr/include/c++/13/bits/cxxabi_init_exception.h:
-
-/usr/include/c++/13/typeinfo:
-
-/usr/include/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/setjmp.h:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
 
 /usr/include/x86_64-linux-gnu/bits/socket_type.h:
 
@@ -730,6 +671,68 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/bits/exception_defines.h:
 
+/usr/include/c++/13/bits/hash_bytes.h:
+
+/usr/lib/llvm-18/lib/clang/18/include/__stddef_size_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/math-vector.h:
+
+/usr/include/c++/13/array:
+
+/usr/include/c++/13/backward/auto_ptr.h:
+
+/usr/include/c++/13/bits/cxxabi_forced.h:
+
+/usr/include/c++/13/bits/erase_if.h:
+
+/usr/include/c++/13/bits/shared_ptr_atomic.h:
+
+/usr/include/wchar.h:
+
+/usr/include/c++/13/bits/shared_ptr_base.h:
+
+/usr/include/x86_64-linux-gnu/bits/endianness.h:
+
+/usr/include/c++/13/bits/chrono.h:
+
+/usr/include/c++/13/bits/hashtable_policy.h:
+
+/usr/include/netinet/in.h:
+
+/usr/include/c++/13/bits/istream.tcc:
+
+/usr/include/c++/13/bits/exception_ptr.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
+
+/usr/include/c++/13/bits/stl_multimap.h:
+
+/usr/include/c++/13/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/13/typeinfo:
+
+/usr/include/c++/13/bits/exception.h:
+
+/usr/include/c++/13/bits/memory_resource.h:
+
+/usr/include/c++/13/bits/valarray_after.h:
+
+/usr/include/c++/13/streambuf:
+
+/srv/shared_folder/src/ChatServer/include/server/model/group.hpp:
+
+/usr/include/c++/13/bits/basic_ios.tcc:
+
+/srv/shared_folder/src/ChatServer/src/client/main.cpp:
+
+/usr/include/c++/13/pstl/execution_defs.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr.h:
+
+/usr/include/linux/stddef.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++config.h:
+
 /usr/include/c++/13/bits/cpp_type_traits.h:
 
 /usr/include/c++/13/cassert:
@@ -740,37 +743,35 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/string.h:
 
+/usr/include/c++/13/bits/memoryfwd.h:
+
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_posix.h:
+
+/usr/include/time.h:
+
 /usr/include/x86_64-linux-gnu/bits/types/error_t.h:
 
 /usr/include/c++/13/bits/hashtable.h:
-
-/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
-
-/srv/shared_folder/src/ChatServer/include/public.hpp:
-
-/usr/include/c++/13/bits/forward_list.tcc:
 
 /usr/include/x86_64-linux-gnu/bits/timesize.h:
 
 /usr/include/c++/13/bits/locale_classes.h:
 
-/usr/include/c++/13/bits/stl_relops.h:
-
-/usr/include/x86_64-linux-gnu/bits/mathcalls.h:
-
 /usr/include/c++/13/bits/uniform_int_dist.h:
 
 /usr/include/c++/13/bits/locale_classes.tcc:
 
-/usr/include/c++/13/cmath:
+/usr/include/c++/13/bits/invoke.h:
 
-/usr/include/c++/13/system_error:
+/usr/include/x86_64-linux-gnu/bits/environments.h:
 
-/usr/include/c++/13/compare:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-/usr/include/c++/13/cstring:
+/usr/include/c++/13/bits/node_handle.h:
 
-/usr/include/c++/13/ctime:
+/usr/include/c++/13/forward_list:
 
 /usr/include/c++/13/ratio:
 
@@ -785,12 +786,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 /usr/include/locale.h:
 
 /usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
-
-/usr/include/c++/13/bits/utility.h:
-
-/srv/shared_folder/src/ChatServer/thirdparty/json.hpp:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
 
 /usr/include/c++/13/ext/alloc_traits.h:
 
@@ -834,17 +829,15 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/iterator:
 
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
 /usr/include/c++/13/limits:
 
 /usr/include/c++/13/memory:
 
-/usr/include/x86_64-linux-gnu/bits/floatn.h:
+/usr/include/x86_64-linux-gnu/c++/13/bits/c++allocator.h:
 
-/usr/lib/gcc/x86_64-linux-gnu/13/include/stdarg.h:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
 /usr/include/c++/13/numeric:
 
@@ -888,7 +881,15 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/tr1/legendre_function.tcc:
 
+/usr/lib/llvm-18/lib/clang/18/include/stddef.h:
+
 /usr/include/c++/13/tr1/modified_bessel_func.tcc:
+
+/usr/include/c++/13/tr1/special_function_util.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/stdc-predef.h:
 
 /usr/include/c++/13/bits/nested_exception.h:
 
@@ -904,6 +905,44 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 
 /usr/include/c++/13/vector:
 
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/atomic_word.h:
+
+/srv/shared_folder/src/ChatServer/include/public.hpp:
+
+/usr/include/c++/13/bits/forward_list.tcc:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/cpu_defines.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_base.h:
+
+/usr/include/c++/13/bits/std_function.h:
+
+/usr/include/c++/13/bits/char_traits.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/ctype_inline.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/x86_64-linux-gnu/c++/13/bits/gthr-default.h:
+
+/usr/include/alloca.h:
+
+/usr/include/c++/13/bits/stl_iterator_base_funcs.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/assert.h:
+
+/usr/include/x86_64-linux-gnu/bits/mathcalls-narrow.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
+
 /usr/include/ctype.h:
 
 /usr/include/features.h:
@@ -915,8 +954,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 /usr/include/c++/13/debug/debug.h:
 
 /usr/include/linux/errno.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/include/pthread.h:
 
@@ -967,13 +1004,3 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: /srv/shared_folder/src/ChatServ
 /usr/include/x86_64-linux-gnu/bits/getopt_core.h:
 
 /usr/include/x86_64-linux-gnu/bits/locale.h:
-
-/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
-
-/usr/include/x86_64-linux-gnu/bits/sched.h:
-
-/usr/include/x86_64-linux-gnu/bits/time.h:
-
-/usr/include/x86_64-linux-gnu/bits/select.h:
-
-/usr/include/x86_64-linux-gnu/bits/socket.h:

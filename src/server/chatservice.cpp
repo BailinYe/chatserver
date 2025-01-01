@@ -1,5 +1,6 @@
 #include "chatservice.hpp"
 #include "friendmodel.hpp"
+#include "groupuser.hpp"
 #include "public.hpp" 
 #include <functional>
 #include <muduo/net/Callbacks.h>
@@ -22,6 +23,9 @@ ChatService::ChatService(){
     _msgHandlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});     
     _msgHandlerMap.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
     _msgHandlerMap.insert({ADD_FRIEND_MSG, std::bind(&ChatService::addFriend, this, _1, _2, _3)});
+    _msgHandlerMap.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
+    _msgHandlerMap.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
+    _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
 }
 
 //业务代码应该只处理对象
@@ -83,7 +87,29 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
                 }
                 response["friends"] = friendsInfo;
             }
-            
+            //查询用户群组信息
+            std::vector<Group> groups = _groupModel.queryGroups(user.getId()); //角色信息通过每次调取该方法 从数据库表中获取角色信息
+            if(!groups.empty()){
+                std::vector<std::string> groupvec;
+                for(Group& group :groups){
+                    json groupjs;
+                    groupjs["id"] = group.getId();
+                    groupjs["groupname"] = group.getName();
+                    groupjs["groupdesc"] = group.getDesc();
+                    std::vector<std::string> uservec;
+                    for(GroupUser& user : group.getUsers()){
+                        json js;
+                        js["id"] = user.getId();
+                        js["name"] = user.getName();
+                        js["state"] = user.getState();
+                        js["role"] = user.getRole();
+                        uservec.push_back(js.dump());
+                    }
+                    groupjs["users"] = uservec;
+                    groupvec.push_back(groupjs.dump()); 
+                }
+                response["groups"] = groupvec;
+            }
             conn->send(response.dump());
         }
     }else{
@@ -198,7 +224,7 @@ void ChatService::createGroup(const TcpConnectionPtr& conn, json& js, Timestamp 
     Group group(-1, name, desc);
     if(_groupModel.createGroup(group)){
         //存储群组创建人信息
-        _groupModel.addGroup(userid, group.getId(), "creator");
+        _groupModel.addGroup(group.getId(), userid, "creator");
     }
 }
 
@@ -206,7 +232,7 @@ void ChatService::createGroup(const TcpConnectionPtr& conn, json& js, Timestamp 
 void ChatService::addGroup(const TcpConnectionPtr& conn, json& js, Timestamp time){
     int userid = js["id"].get<int>();
     int groupid = js["groupid"].get<int>();
-    _groupModel.addGroup(userid, groupid, "normal");
+    _groupModel.addGroup(groupid, userid, "normal");
 }
 
 //群组聊天业务

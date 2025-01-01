@@ -81,7 +81,7 @@ std::vector<Group> GroupModel::queryGroups(int userid){
                 user.setName(row[1]);
                 user.setState(row[2]);
                 user.setRole(row[3]);
-                group.getUsers().push_back(user);
+                group.getUsers().push_back(user); //groups并不真正存储用户信息 角色信息在函数运行后才从数据库中返回 类表示结构 动态获取
             }
             mysql_free_result(res);
         }
