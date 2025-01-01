@@ -163,7 +163,7 @@ void ChatService::clientCloseException(const TcpConnectionPtr& conn){
 
 //一对一聊天业务
 void ChatService::oneChat(const TcpConnectionPtr& conn, json& js, Timestamp time){
-    int toid = js["to"].get<int>();    
+    int toid = js["toid"].get<int>();    
     {
         //线程安全 因为可能有其它线程在修改_userConnectionMap这个变量
         std::lock_guard<std::mutex> lock(_connMutex);
@@ -187,8 +187,6 @@ void ChatService::addFriend(const TcpConnectionPtr& conn, json& js, Timestamp ti
     _friendModel.insert(userid, friendid);
 
 }
-
-
 
 //创建群组业务
 void ChatService::createGroup(const TcpConnectionPtr& conn, json& js, Timestamp time){
