@@ -12,6 +12,11 @@ public:
         this->password = password;
         this->state = state;
     }
+    User(const User& user)
+        :id{user.id}, name{user.name}, password{user.password}, state{user.state}
+    {
+
+    }
 
     void setId(int id){this->id = id;}
     void setName(std::string name){this->name = name;}

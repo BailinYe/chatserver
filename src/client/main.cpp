@@ -143,15 +143,14 @@ int main(int argc, char** argv){
                                     group.setId(grpjs["id"].get<int>());
                                     group.setName(grpjs["groupname"]);
                                     group.setDesc(grpjs["groupdesc"]);
-
                                     std::vector<std::string> userinfos = grpjs["users"];
                                     for(std::string& userinfo : userinfos){
+                                        json userjs = json::parse(userinfo);
                                         GroupUser user;
-                                        json js = json::parse(userinfo);
-                                        user.setId(js["id"].get<int>());
-                                        user.setName(js["name"]);
-                                        user.setState(js["state"]);
-                                        user.setRole(js["role"]);
+                                        user.setId(userjs["id"].get<int>());
+                                        user.setName(userjs["name"]);
+                                        user.setState(userjs["state"]);
+                                        user.setRole(userjs["role"]);
                                         group.getUsers().push_back(user);
 
                                     }
@@ -281,7 +280,8 @@ void showCurrentUserData(){
         for(Group& group : g_currentUserGroupList){
             std::cout << group.getId() << " " << group.getName() << " " << group.getDesc() << std::endl;
             for(GroupUser& user : group.getUsers()){
-                std::cout << user.getId() << " " << user.getName() << " " << user.getState() << user.getRole() << std::endl;
+                std::cout << user.getId() << " " << user.getName() << " " << user.getState() << " " << user.getRole() << std::endl;
+
             }
         }
     }
@@ -466,8 +466,16 @@ void groupchat(int clientfd, std::string commandArgs){
 
 }
 //"logout" command handler
-void logout(int, std::string){
-    
+void logout(int clientfd, std::string){
+    json js;
+    js["msgid"] = LOGOUT_MSG;
+    js["id"] = g_currentUser.getId();
+    std::string buffer = js.dump();
+
+    int len = send(clientfd, buffer.c_str(), strlen(buffer.c_str())+1, 0);
+    if(len == -1){
+        std::cerr << "send logout msg error -> " << buffer << std::endl;
+    }
 }
 
 //获取系统时间 (聊天信息需要添加时间信息)

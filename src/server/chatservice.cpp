@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <muduo/base/Logging.h>
+#include <iostream>
 
 using namespace std::placeholders;
 using namespace muduo;
@@ -26,6 +27,7 @@ ChatService::ChatService(){
     _msgHandlerMap.insert({CREATE_GROUP_MSG, std::bind(&ChatService::createGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({ADD_GROUP_MSG, std::bind(&ChatService::addGroup, this, _1, _2, _3)});
     _msgHandlerMap.insert({GROUP_CHAT_MSG, std::bind(&ChatService::groupChat, this, _1, _2, _3)});
+    _msgHandlerMap.insert({LOGOUT_MSG, std::bind(&ChatService::logout, this, _1, _2, _3)});
 }
 
 //业务代码应该只处理对象
@@ -91,7 +93,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time){
             std::vector<Group> groups = _groupModel.queryGroups(user.getId()); //角色信息通过每次调取该方法 从数据库表中获取角色信息
             if(!groups.empty()){
                 std::vector<std::string> groupvec;
-                for(Group& group :groups){
+                for(Group& group : groups){
                     json groupjs;
                     groupjs["id"] = group.getId();
                     groupjs["groupname"] = group.getName();
@@ -163,6 +165,24 @@ MsgHandler ChatService::getHandler(int msgid){
         };
     }                                          
     return _msgHandlerMap[msgid];
+}
+
+void ChatService::logout(const TcpConnectionPtr &conn, json &js, Timestamp time){
+    int userid = js["id"].get<int>();
+    {
+        std::lock_guard<std::mutex> lock(_connMutex);
+        auto it = _userConnectionMap.find(userid);
+        if(it != _userConnectionMap.end()){
+            _userConnectionMap.erase(it); 
+        }
+    }
+    if (userid != -1) {
+        // 更新用户状态信息
+        User user;
+        user.setId(userid);
+        user.setState("offline");
+        _userModel.updateState(user); // 根据user对象的状态信息更新表
+    }
 }
 
 void ChatService::clientCloseException(const TcpConnectionPtr& conn){
@@ -253,6 +273,11 @@ void ChatService::groupChat(const TcpConnectionPtr& conn, json& js, Timestamp ti
             _offlineMsgModel.insert(id, js.dump());
         }
     }
+}
+
+//"logout" command handler
+void logout(int clientfd, std::string commandArgs){
+       
 }
 
 void ChatService::reset(){

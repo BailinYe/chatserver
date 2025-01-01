@@ -2,6 +2,7 @@
 #include "groupuser.hpp"
 #include "db.h"
 #include <mysql/mysql.h>
+#include <iostream>
 
 //通过封装对业务层所需的数据进行处理 并以对象的形式进行返回
 //提供给业务层对象信息 比如Group User 而不是字段信息 或者sql语句
@@ -70,8 +71,8 @@ std::vector<Group> GroupModel::queryGroups(int userid){
     //查询所有群组的用户信息
     for(Group& group : groups){
         sprintf(sql, "select a.id, a.name, a.state, b.grouprole from user a inner join \
-        groupuser b on b.userid = a.userid where b.groupid = '%d'", group.getId());
-
+        groupuser b on b.userid = a.id where b.groupid = %d", group.getId());
+        
         MYSQL_RES* res = mysql.query(sql);
         if(res != nullptr){
             MYSQL_ROW row;

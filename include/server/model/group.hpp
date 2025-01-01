@@ -12,6 +12,11 @@ public:
     {
         
     }
+    Group(const Group& group)
+        :id{group.id}, name{group.name}, desc{group.desc}, users{group.users}
+    {
+
+    }
     
     void setId(int id){this->id = id;}
     void setName(std::string name){this->name = name;}
@@ -20,7 +25,7 @@ public:
     int getId(){return this->id;}
     std::string getName(){return this->name;}
     std::string getDesc(){return this->desc;}
-    std::vector<GroupUser> getUsers(){return this->users;}
+    std::vector<GroupUser>& getUsers(){return this->users;}
 
 private:
     int id;
