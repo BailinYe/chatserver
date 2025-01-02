@@ -6,11 +6,13 @@
 #include <unordered_map>
 #include <functional>
 #include <mutex>
+#include "redis.hpp"
 #include "json.hpp"
 #include "usermodel.hpp"
 #include "groupmodel.hpp"
 #include "friendmodel.hpp"
 #include "offlinemessagemodel.hpp"
+
 using namespace muduo;
 using namespace muduo::net;
 using namespace std::placeholders;
@@ -48,6 +50,8 @@ public:
     MsgHandler getHandler(int msgid);
     //服务器异常, 业务重置方法
     void reset();
+    //从redis消息队列中获取订阅的消息
+    void handleRedisSubscribeMessage(int userid, std::string msg);
 
 private:
     ChatService();
@@ -66,6 +70,9 @@ private:
     std::mutex _connMutex;
     FriendModel _friendModel;
     GroupModel _groupModel; 
+    
+    //redis操作对象
+    Redis _redis;
 };
 
 #endif
