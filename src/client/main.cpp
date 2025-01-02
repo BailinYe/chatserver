@@ -30,6 +30,8 @@ std::vector<User> g_currentUserFriendList;
 std::vector<Group> g_currentUserGroupList;
 //显示当前登录成功用户的基本信息
 void showCurrentUserData();
+//控制MainMenu界面程序布尔值
+bool isMainMenuRunning = false;
 
 //接收线程 多线程防止输入阻塞接收
 void readTaskHandler(int clientfdl);
@@ -123,6 +125,8 @@ int main(int argc, char** argv){
 
                             //记录当前用户的好友列表信息
                             if(responsejs.contains("friends")){ //当前用户是否拥有好友
+                                //每次登陆显示数据前 清除一下上次登录的数据
+                                g_currentUserFriendList.clear();
                                 std::vector<std::string> friends = responsejs["friends"];
                                 for(std::string& buddy : friends){
                                     json js = json::parse(buddy);
@@ -136,6 +140,9 @@ int main(int argc, char** argv){
                             
                             //记录当前用户的群组列表信息
                             if(responsejs.contains("groups")){
+                                //清理记录
+                                g_currentUserGroupList.clear();
+
                                 std::vector<std::string> groupinfos = responsejs["groups"];
                                 for(std::string& groupinfo : groupinfos){
                                     json grpjs = json::parse(groupinfo);
@@ -179,10 +186,15 @@ int main(int argc, char** argv){
                                 }
                             }
 
-                            //登录成功, 启动接收线程负责接收数据
-                            std::thread readTask(readTaskHandler, clientfd);
-                            readTask.detach(); //不分离 如果主线程没有调用join方法 就会造成tcp资源泄露 //分离子线程 资源在线程结束后会自动被回收
+                            //登录成功, 启动接收线程负责接收数据 该线程只启动一次 防止recv函数阻塞
+                            static bool readThreadInitialized = false;
+                            if(!readThreadInitialized){
+                                std::thread readTask(readTaskHandler, clientfd);
+                                readThreadInitialized = true;
+                                readTask.detach(); //不分离 如果主线程没有调用join方法 就会造成tcp资源泄露 //分离子线程 资源在线程结束后会自动被回收
+                            }
                             //进入聊天主菜单界面
+                            isMainMenuRunning = true;
                             mainMenu(clientfd);
                             
                         }
@@ -329,7 +341,7 @@ void mainMenu(int clientfd){
     help();
 
     char buffer[1024] = {0};
-    for(;;){
+    while(isMainMenuRunning){
         std::cin.getline(buffer, 1024);
         std::string commandBuf(buffer);
         std::string command; //存储命令
@@ -475,6 +487,8 @@ void logout(int clientfd, std::string){
     int len = send(clientfd, buffer.c_str(), strlen(buffer.c_str())+1, 0);
     if(len == -1){
         std::cerr << "send logout msg error -> " << buffer << std::endl;
+    }else{
+        isMainMenuRunning = false;
     }
 }
 

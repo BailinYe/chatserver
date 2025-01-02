@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/srv/shared_folder/src/ChatServer/include -I/srv/shared_folder/src/ChatServer/include/server -I/srv/shared_folder/src/ChatServer/include/server/db -I/srv/shared_folder/src/ChatServer/include/server/model -I/srv/shared_folder/src/ChatServer/thirdparty
+CXX_INCLUDES = -I/srv/shared_folder/src/ChatServer/include -I/srv/shared_folder/src/ChatServer/include/server -I/srv/shared_folder/src/ChatServer/include/server/db -I/srv/shared_folder/src/ChatServer/include/server/model -I/srv/shared_folder/src/ChatServer/include/server/redis -I/srv/shared_folder/src/ChatServer/thirdparty
 
 CXX_FLAGS = 
 

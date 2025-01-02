@@ -20,6 +20,7 @@ ChatService* ChatService::getChatService(){
 
 //注册消息以及对应的handler回调操作
 ChatService::ChatService(){
+    //因为是成员对象 所以需要通过bind方法绑定当前对象
     _msgHandlerMap.insert({LOGIN_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});     
     _msgHandlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});     
     _msgHandlerMap.insert({ONE_CHAT_MSG, std::bind(&ChatService::oneChat, this, _1, _2, _3)});
@@ -167,6 +168,7 @@ MsgHandler ChatService::getHandler(int msgid){
     return _msgHandlerMap[msgid];
 }
 
+//logout command handler
 void ChatService::logout(const TcpConnectionPtr &conn, json &js, Timestamp time){
     int userid = js["id"].get<int>();
     {
@@ -273,11 +275,6 @@ void ChatService::groupChat(const TcpConnectionPtr& conn, json& js, Timestamp ti
             _offlineMsgModel.insert(id, js.dump());
         }
     }
-}
-
-//"logout" command handler
-void logout(int clientfd, std::string commandArgs){
-       
 }
 
 void ChatService::reset(){
