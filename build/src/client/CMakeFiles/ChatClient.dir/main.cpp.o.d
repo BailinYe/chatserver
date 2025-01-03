@@ -203,7 +203,10 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: \
  /usr/include/asm-generic/sockios.h \
  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
  /usr/include/netinet/in.h /usr/include/x86_64-linux-gnu/bits/in.h \
- /usr/include/arpa/inet.h \
+ /usr/include/arpa/inet.h /usr/include/semaphore.h \
+ /usr/include/x86_64-linux-gnu/bits/semaphore.h \
+ /usr/include/c++/13/atomic /usr/include/c++/13/bits/atomic_base.h \
+ /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /srv/shared_folder/src/ChatServer/include/server/model/groupuser.hpp \
  /srv/shared_folder/src/ChatServer/include/server/model/user.hpp \
  /srv/shared_folder/src/ChatServer/thirdparty/json.hpp \
@@ -219,8 +222,6 @@ src/client/CMakeFiles/ChatClient.dir/main.cpp.o: \
  /usr/include/c++/13/bits/allocated_ptr.h \
  /usr/include/c++/13/ext/concurrence.h \
  /usr/include/c++/13/bits/shared_ptr_atomic.h \
- /usr/include/c++/13/bits/atomic_base.h \
- /usr/include/c++/13/bits/atomic_lockfree_defines.h \
  /usr/include/c++/13/backward/auto_ptr.h \
  /usr/include/c++/13/pstl/glue_memory_defs.h /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
